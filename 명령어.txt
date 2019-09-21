@@ -128,3 +128,9 @@ const Circle = function (props) {
 
 ganache truffle ethereum react
 
+
+
+npm install
+truffle compile
+
+

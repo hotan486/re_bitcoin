@@ -29,16 +29,52 @@ class Main extends Component {
 
     async componentDidMount() {
       //TODO
+      try{
+        const web3 = await getWeb3();
+        const accounts = await web3.eth.getAccounts();
+        const networkId = await web3.eth.net.getId();
 
+        const deployedNetwork = SimpleStorage.networks[networkId];
+        const instance = new web3.eth.Contract(
+          SimpleStorage.abi,
+          deployedNetwork && deployedNetwork.address,
+        );
+
+         instance.events.Change()
+         .on('data', (event) => {
+           this.handleEvent(event);
+         })
+         .on('error', (err) => {console.log(err)
+         });
+
+
+         this.setState({web3, accounts, networkId, contract: instance});
+         //Truffle migrate --reset
+
+      }catch (error){
+        alert('Failed');
+        console.log(error);
+      }
     }
 
     handleSend = async () => {
         //TODO
-
+        const {accounts, contract} = this.state;
+        if(this.state.val > 0){
+          this.setState({pending:!this.state.pending});
+          try{
+            await contract.methods.set(this.state.val).send({from:accounts[0]});
+          }catch(error){
+            this.setState({pending:false});
+          }
+        }
 
     }
 
-
+    // handleEvent = (event) => {
+    //   this.setState({pending:!this.state.pending,
+    //     storedData:event.returnValue;});
+    // }
 
 
     handleChange = (e) => {
@@ -109,4 +145,3 @@ class Main extends Component {
 
 
 export default Main;
-
