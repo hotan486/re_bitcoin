@@ -64,6 +64,7 @@ class Main extends Component {
           this.setState({pending:!this.state.pending});
           try{
             await contract.methods.set(this.state.val).send({from:accounts[0]});
+            await contract.methods.get().call();
           }catch(error){
             this.setState({pending:false});
           }
@@ -71,11 +72,14 @@ class Main extends Component {
 
     }
 
-    // handleEvent = (event) => {
-    //   this.setState({pending:!this.state.pending,
-    //     storedData:event.returnValue;});
-    // }
+    handleEvent = (event) => {
+      this.setState({pending:!this.state.pending,
+        storedData:event.returnValues.newVal});
+    }
 
+    // handleEventLog = (event) => {
+    //
+    // }
 
     handleChange = (e) => {
 
@@ -129,7 +133,7 @@ class Main extends Component {
                                     </p>
                                 </div>
                                 <div style={{display:"inline-block", float:"right"}}>
-                                    Loading Spinner
+                                    {this.state.pending?<Loader type="Grid" color="#CE62D4" height="50" width="50" />:null}
                                 </div>
                             </Panel.Body>
                         </Panel>
