@@ -1,0 +1,30 @@
+=============== Aug 24, 2019 (KST) ===============
+09:47:52.178777 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+09:47:52.184761 db@open opening
+09:47:52.185759 version@stat F·[] S·0B[] Sc·[]
+09:47:52.186757 db@janitor F·2 G·0
+09:47:52.187753 db@open done T·1.9957ms
+09:47:52.195732 db@close closing
+09:47:52.202130 db@close done T·6.3978ms
+=============== Aug 24, 2019 (KST) ===============
+09:52:53.357042 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+09:52:53.357042 version@stat F·[] S·0B[] Sc·[]
+09:52:53.357042 db@open opening
+09:52:53.358042 journal@recovery F·1
+09:52:53.359061 journal@recovery recovering @1
+09:52:53.366023 memdb@flush created L0@2 N·10 S·561B "Hv\xd7..\x1a^e,v3":"r\x00\x00..\x1a^e,v5"
+09:52:53.368043 version@stat F·[1] S·561B[561B] Sc·[0.25]
+09:52:53.377800 db@janitor F·3 G·0
+09:52:53.377800 db@open done T·19.758ms
+09:53:45.368738 db@close closing
+09:53:45.374722 db@close done T·5.984ms
+=============== Aug 24, 2019 (KST) ===============
+09:54:23.008526 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+09:54:23.008526 version@stat F·[1] S·561B[561B] Sc·[0.25]
+09:54:23.008526 db@open opening
+09:54:23.009523 journal@recovery F·1
+09:54:23.010521 journal@recovery recovering @3
+09:54:23.015507 memdb@flush created L0@5 N·2 S·241B "Dat..ion,v12":"Las..der,v13"
+09:54:23.018500 version@stat F·[2] S·802B[802B] Sc·[0.50]
+09:54:23.027536 db@janitor F·4 G·0
+09:54:23.027536 db@open done T·19.01ms
