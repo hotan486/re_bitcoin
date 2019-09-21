@@ -1,0 +1,124 @@
+docker run -it --name eht-kosmo -v ./shared:/root/shared -p 30303:30303 -p 8545:8545 -p 8546:8546 eht-kosmo0 geth --networkid 44 --datadir /root/edu --nousb --rpc --rpcaddr 0.0.0.0 --rpccorsdomain "*" --ws --wsaddr 0.0.0.0 --wsorigins "*" --allow-insecure-unlock 
+네임과 이미지를 다르게 해야 한다.
+docker ps
+docker ps -a
+docker start eht-kosmo
+
+컨테이너명과 이미지명을 다르게 해야 한다.
+
+docker exec -it eht-kosmo /bin/bash
+
+cd edu
+ls -la
+geth attach ipc:/root/edu/geth.ipc
+
+
+
+docker logs -f eht-kosmo 로그 확인 
+
+메타마스크
+
+도커 위치로 가서 
+docker ps -a
+docker start eht-kosmo
+docker exec -it eht-kosmo /bin/bash
+
+포스트맨에서 해당 url 
+http://localhost:8545
+ 호출 
+
+http://bit.ly/30JcjF2
+http://remix.ethereum.org
+http://solidity.readthedocs.io
+
+https://github.com/swkim109
+http://bit.ly/2lGDO2E
+
+npm config list --
+C:\\Users\\Sunday\\AppData\\Roaming\\npm
+
+
+//
+pragma solidity ^0.5.11;
+contract Receiver{
+    
+    /*struct UserInfo{
+        string userId;
+        string userName;
+        uint userAge;
+    }
+    
+    UserInfo public userInfo;
+    UserInfo[] public UserList;
+    
+    function addUser(string calldata _userid, 
+    string calldata _userName
+    ,uint _userAge) external returns(bool){
+        
+        bool result;
+        UserInfo memory user;
+        user.userId = _userid;
+        user.userName = _userName;
+        user.userAge = _userAge;
+        
+        uint i = UserList.push(user);
+        
+        if(i >0){
+            result = true;
+            
+        }
+        
+        return result;
+    }*/
+    
+   uint256 public v1;
+   event checkGasLeft(uint256 _gas);
+   
+   function () external payable{
+       
+       emit checkGasLeft(gasleft());
+       v1 = v1 + msg.value;
+   }
+    
+ 
+    
+}
+
+//
+
+pragma solidity ^0.5.11;
+import "./hello.sol";
+contract MySol{
+    
+    Receiver receiver;
+    
+    constructor(address payable _adder) public{
+        receiver = Receiver(_adder);
+    }
+    
+    function send() public{
+        address(receiver).transfer(0.1 ether);
+    }
+    
+    function () external payable{
+        
+    }
+    
+    function getBalance() public view returns (uint){
+        return address(this).balance;
+    }
+}
+
+
+
+const Circle = function (props) {
+  return (
+    <div onClick={props.handleClick}>
+        <FontAwesomeIcon icon={this.state.filled ? fasCircle: farCircle } size="5x" />
+    </div>
+  )
+}
+
+
+ganache truffle ethereum react
+
