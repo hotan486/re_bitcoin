@@ -37,6 +37,12 @@ http://bit.ly/2lGDO2E
 npm config list --
 C:\\Users\\Sunday\\AppData\\Roaming\\npm
 
+--메타마스크
+789456123
+cousin birth hat crumble luxury young square repeat output behind affair gallery
+
+
+
 
 //
 pragma solidity ^0.5.11;
